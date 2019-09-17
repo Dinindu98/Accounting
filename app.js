@@ -2,7 +2,7 @@ const form = document.querySelector('#task-form');
 const taskList = document.querySelector('.collection');
 const  clearBtn = document.querySelector('.clear-tasks');
 const filter = document.querySelector('#filter');
-const taskInput = document.querySelector('#task');
+const amount = document.querySelector('#amount');
 
 loadEventListners();
 
@@ -16,20 +16,20 @@ function loadEventListners(){
 }
 
 function addTask(e){
-    if(taskInput.value === ''){
+    if(amount.value === ''){
         alert('Add a task');
     }
 
-    const li = document.createElement('li');
+    const li = document.createElement('tr');
     li.className = 'collection-item';
-    li.appendChild(document.createTextNode(taskInput.value));
+    li.appendChild(document.createTextNode(amount.value));
     const link = document.createElement('a');
     link.className = 'delete-item secondary-content';
     link.innerHTML = '<i class="fa fa-remove"></i>';
     li.appendChild(link);
     taskList.appendChild(li);
-    storeTaskInLocalStorage(taskInput.value);
-    taskInput.value='';
+    storeTaskInLocalStorage(amount.value);
+    amount.value='';
     console.log(li);
     e.preventDefault();
 }
