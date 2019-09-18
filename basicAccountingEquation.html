@@ -11,15 +11,7 @@
     <title>Document</title>
 
     
-      <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-      </script> 
-      
-      <script>
-         $(document).ready(function() {
-            $('select').material_select();
-         });
-      </script>
+     
 </head>
 <body>
     <div class="container">
@@ -32,21 +24,21 @@
                             <form action="" id="task-form">
                                 <div class="input-field col s12">
                                     
-                                            <select>
-                                                    <option value = "" disabled selected>Select Transection Type</option>
-                                                    <option value = "1">Mango</option>
-                                                    <option value = "2">Orange</option>
-                                                    <option value = "3">Apple</option>
-                                            </select>
-                                       
-                                    <div class="row">
-                                    <input type="text" name="amount" id="amount">
-                                    <label for="amount">Amount</label>
-                                    </div>
-                                    <div class="row">
-                                    <input type="text" name="additionals" id="additionals">
-                                    <label for="additionals">additionals</label>
-                                    </div>
+                                       <table class="table table-condensed">
+                                           <tr>
+                                            <th>Assets =</th>
+                                            <th>Equity</th>
+                                            <th>+(Income - Expence)</th>
+                                            <th>+Liabilities</th>
+                                        </tr>
+                                        <tr>
+
+                                            <td id="col1"><input type="text" name="amount" id="assets"></td>
+                                            <td id="col2"><input type="text" name="amount" id="equity"></td>
+                                            <td id="col3"><input type="text" name="amount" id="income"></td>
+                                            <td id="col4"><input type="text" name="amount" id="liabilities"></td>
+                                        </tr>
+                                    </table>     
                                 </div>
                                 <input type="submit" value="Add transection" class="btn">
                             </form>
@@ -60,17 +52,18 @@
                             <label for="filter">Filter transections</label>
                             </div>  
                             <div class="row">
-                           <table class="table table-condensed">
+                           <table class="table table-condensed" id="transection-table">
                                <tr>
+                                   <th>&nbsp;</th>
                                    <th> assets = </th>
                                    <th>equity </th>
                                    <th>+ (income - expence) </th>
                                    <th>+ liabilities</th>
+                                   <th>&nbsp;</th>
                                </tr>
                            </table>
-                            <div class="row">
-                        </div>
-                        <ul class="collection"></ul>
+                            
+                        
                         <a class="clear-tasks btn black">Clear</a>
                     </div>
                 </div>
